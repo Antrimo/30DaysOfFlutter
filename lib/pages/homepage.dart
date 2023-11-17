@@ -5,7 +5,7 @@ class Homepage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int days = 3;
+    int days = 4;
     String name = 'Kartikey';
     var one = 'Demo';
     return Scaffold(
