@@ -5,13 +5,13 @@ class Homepage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int days = 4;
-    String name = 'Kartikey';
+    int days = 5;
+    String name1 = 'Kartikey';
     var one = 'Demo';
     return Scaffold(
       appBar: AppBar(title: Center(child: Text('Flutter $one'))),
       body: Center(
-        child: Text('Welcome to Day $days of Flutter by $name'),
+        child: Text('Welcome to Day $days of Flutter by $name1'),
       ),
       drawer: const Drawer(),
       floatingActionButton: FloatingActionButton(
