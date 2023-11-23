@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:app/utils/routes.dart';
 
 class Loginpage extends StatefulWidget {
-  const Loginpage({super.key});
+  const Loginpage({Key? key}) : super(key: key);
 
   @override
   State<Loginpage> createState() => _LoginpageState();
@@ -12,19 +12,15 @@ class _LoginpageState extends State<Loginpage> {
   String name = "";
   bool changeButton = false;
 
-  final _formKey = GlobalKey<FormState>();
-
   moveToHome(BuildContext context) async {
-    if (_formKey.currentState!.validate()) {
-      setState(() {
-        changeButton = true;
-      });
-      await Future.delayed(const Duration(seconds: 1));
-      await Navigator.pushNamed(context, Routes.homeRoute);
-      setState(() {
-        changeButton = false;
-      });
-    }
+    setState(() {
+      changeButton = true;
+    });
+    await Future.delayed(const Duration(seconds: 1));
+    await Navigator.pushNamed(context, Routes.homeRoute);
+    setState(() {
+      changeButton = false;
+    });
   }
 
   @override
@@ -55,12 +51,12 @@ class _LoginpageState extends State<Loginpage> {
                       hintText: "Enter Username",
                       labelText: "Username",
                     ),
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        return "Username cannot be empty";
-                      }
-                      return null;
-                    },
+                    // validator: (value) {
+                    //   if (value!.isEmpty) {
+                    //     return "Username cannot be empty";
+                    //   }
+                    //   return null;
+                    // },
                     onChanged: (value) => {
                           name = value,
                           setState(() {}),
@@ -72,11 +68,11 @@ class _LoginpageState extends State<Loginpage> {
                     hintText: "Enter Password",
                     labelText: "Password",
                   ),
-                  validator: (value) => value!.isEmpty
-                      ? "Password cannot be empty"
-                      : value.length < 6
-                          ? "Password length should be atleast 6"
-                          : null,
+                  // validator: (value) => value!.isEmpty
+                  //     ? "Password cannot be empty"
+                  //     : value.length < 6
+                  //         ? "Password length should be atleast 6"
+                  //         : null,
                 ),
                 const SizedBox(height: 20),
 
