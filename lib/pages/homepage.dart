@@ -1,3 +1,4 @@
+import 'package:app/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 
 class Homepage extends StatelessWidget {
@@ -13,7 +14,7 @@ class Homepage extends StatelessWidget {
       body: Center(
         child: Text('Welcome to Day $days of Flutter by $name1'),
       ),
-      drawer: const Drawer(),
+      drawer: const MyDrawer(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: const Icon(
